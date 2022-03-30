@@ -1,66 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
-void swap(int *x, int *y);
-int main()
+#include <string.h>
+
+/*struct A{ //구조체 정의 
+    int a; //member 1
+    int b; //member 2
+};
+
+struct B{
+    struct A a;
+    int b;
+};
+
+struct C{
+    struct B b;
+    struct A a;
+    int c;
+};
+
+main()
 {
-    int n;
-    scanf("%d", &n);
-    int *list = (int *)malloc(sizeof(4*n));
-    for(int i =0; i<n; i++){
-        scanf("%d", &list[i]);
-    }
-    int min;
-    int cnt;
-    for(int i = 0;i<n;i++){
-        min = list[i];
-        cnt = i;
-        for(int j = i+1; j <n; j++){
-            if (list[j]<min){
-                min = list[j];
-                cnt = j;
-            }
-        }
-        swap(&list[i], &list[cnt]);
-    }
-    
-    for(int i = 0;i<n;i++) printf("%d ", list[i]);
-    printf("\n");
+    struct A a; //구조체 A형 변수 a선언
+    a.a = 10; 
+    a.b = 20;
+    printf("a.a = %d\na.b = %d\n",a.a,a.b);
 
-    //binaty search
+    struct C c;
+    c.b.a.a = 10;
+    c.b.a.b = 20;
+    c.a.a = 15;
+    c.a.b = 25;
+    c.b.b = 30;
+    c.c = 35;
 
-    int x;
-    scanf("%d", &x);
-
-    int l , r , m;
-    l=0; r=n; m=(l+r)/2;
-
-    while(1){
-        if(l>r) {
-            printf("Not founded");
-            break;
-        }
-
-
-        if(x == list[m]){
-            printf("%d", x);
-            break;
-        }
-        else if (x>list[m]){
-            l = m+1;
-            m=(l+r)/2;
-        }
-        else{
-            r = m-1;
-            m=(l+r)/2;
-        }
-    }
-
+    printf("c.b.a.a = %d\nc.b.a.b = %d\nc.a.a = %d\nc.a.b = %d\nc.b.b =%d\nc.c = %d\n",c.b.a.a ,c.b.a.b,c.a.a,c.a.b,c.b.b,c.c);
     return 0;
-}
+}*/
 
-void swap(int *x, int *y)
-{
-    int tmp = *x;
-    *x = *y;
-    *y = tmp;
+struct namec{
+    int a;
+    char a_str[20];
+};
+
+struct namecard2{
+    int b;
+    char b_str[20];
+    
 }

@@ -6,9 +6,9 @@ int main(void){
     int count_compare = 0;
     int count_swap = 0;
     for(int i = 0; i<10; i++){
-        for(int j = 0; j<i; j++){
+        for(int j = i+1; j<10; j++){
             count_compare++;
-            if(n[i]>n[j]){
+            if(n[i]<n[j]){
                 tmp = n[j];
                 n[j] = n[i];
                 n[i] = tmp;
